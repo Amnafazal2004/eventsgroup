@@ -17,7 +17,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import BlogSection from "@/components/BlogSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import OurMissionSection from "@/components/OurMissionSection";
+import StatSection from "@/components/StatSection";
 
 const Index = () => {
    const { scrollY } = useScroll()
@@ -34,7 +34,7 @@ const Index = () => {
 
   return (
    <>
-   <div className="min-h-screen bg-black text-white">
+   <div className="min-h-screen bg-background text-foreground">
        <div>
             <motion.header
                 className="header"
@@ -49,13 +49,12 @@ const Index = () => {
 
           
         </div>
-            <main className="pt-150">
+            <main className="mt-55">
                 <HeroSection />
       <AboutSection />
-      <OurMissionSection/>
-      <WhyChooseSection />
       <ServicesSection />
-      <StatsSection />
+      <WhyChooseSection />
+      <StatSection />
       <ProcessSection />
       <ProjectsSection />
       <TeamSection />
