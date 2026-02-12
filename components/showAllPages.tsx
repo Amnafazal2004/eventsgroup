@@ -46,9 +46,7 @@ const Index = () => {
                         <Header/>
             </motion.header>
 
-          
-        </div>
-            <main className="mt-55">
+            <main>
                 <HeroSection />
       <AboutSection />
       <ServicesSection />
@@ -65,6 +63,8 @@ const Index = () => {
                
             </main>
 
+          
+        </div>
         
          
           </div>
