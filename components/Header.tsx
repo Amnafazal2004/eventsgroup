@@ -7,7 +7,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/30 animate-fade-down">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10 animate-fade-down">
       <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
         <div className="flex items-center gap-3">
           {/* Logo */}
@@ -38,7 +38,7 @@ const Header = () => {
                 {[0, 1, 2, 3].map((i) => (
                   <span
                     key={i}
-                    className="w-1.5 h-1.5 bg-foreground rounded-full transition-all duration-300 group-hover:bg-primary group-hover:scale-125"
+                    className="w-1.5 h-1.5 bg-white rounded-full transition-all duration-300 group-hover:bg-primary group-hover:scale-125"
                     style={{ transitionDelay: `${i * 50}ms` }}
                   />
                 ))}
@@ -107,7 +107,7 @@ const Header = () => {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden bg-background border-t border-border overflow-hidden transition-all duration-500 ease-out ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
+        className={`md:hidden bg-black border-t border-border overflow-hidden transition-all duration-500 ease-out ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
       >
         <nav className="px-6 py-8 flex flex-col gap-4 md:gap-12 md:flex-row">
           {["Home", "About", "Services", "Projects", "Pricing", "Contact"].map((item, i) => (
