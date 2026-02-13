@@ -6,11 +6,11 @@ import { useState } from "react"
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import ServicesSection from "@/components/ServicesSection";
+import ServicesSection from "@/components/WhatWeDo";
 import WhyChooseSection from "@/components/WhyChooseSection";
 import StatsSection from "@/components/StatsSection";
 import ProcessSection from "@/components/ProcessSection";
-import ProjectsSection from "@/components/ProjectsSection";
+import ProjectsSection from "@/components/UpcomingEvents";
 import TeamSection from "@/components/TeamSection";
 import PricingSection from "@/components/PricingSection";
 import TestimonialsSection from "@/components/TestimonialsSection";

@@ -5,7 +5,7 @@ import Image from "next/image";
 import blog3 from "@/assets/blog-3.webp";
 
 const text =
-  "Beyond Boundaries, Beyond Brands, Sparking Ideas, Igniting Success.";
+  "Beyond, Boundaries, Beyond, Brands, Sparking, Ideas, Igniting, Success.";
 
 const OurMissionSection = () => {
   const words = text.split(" ");
@@ -19,7 +19,7 @@ const OurMissionSection = () => {
           className="text-2xl md:text-3xl lg:text-4xl font-bold italic max-w-4xl leading-tight"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.7 }}
           transition={{ staggerChildren: 0.12 }}
         >
           {words.map((word, index) => (
@@ -30,7 +30,7 @@ const OurMissionSection = () => {
                 hidden: { color: "#6b7280" },
                 visible: {
                   color: "#ffffff",
-                  transition: { duration: 0.5 },
+                  transition: { duration: 0.8 },
                 },
               }}
             >
