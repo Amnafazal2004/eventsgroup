@@ -8,17 +8,9 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import WhatWedo from "@/components/WhatWeDo";
 import WhyChooseSection from "@/components/WhyChooseSection";
-import StatsSection from "@/components/StatsSection";
-import ProcessSection from "@/components/ProcessSection";
-import ProjectsSection from "@/components/UpcomingEvents";
-import TeamSection from "@/components/TeamSection";
-import PricingSection from "@/components/PricingSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import BlogSection from "@/components/BlogSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
 import OurMissionSection from "@/components/OurMissionSection";
 import UpcomingEvents from "@/components/UpcomingEvents";
+import UpcomingBoardrooms from "@/components/UpcomingBoardrooms";
 
 const Index = () => {
    const { scrollY } = useScroll()
@@ -57,15 +49,9 @@ const Index = () => {
       <WhyChooseSection />
       <WhatWedo />
       <UpcomingEvents/>
-      <StatsSection />
-      <ProcessSection />
-      <ProjectsSection />
-      <TeamSection />
-      <PricingSection />
-      <TestimonialsSection />
-      <BlogSection />
-      <ContactSection />
-      <Footer />
+      <UpcomingBoardrooms/>
+    
+  
                
             </main>
 

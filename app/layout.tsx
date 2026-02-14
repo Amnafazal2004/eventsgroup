@@ -1,9 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Antonio, Bebas_Neue, Fahkwang, Geist, Geist_Mono, Pathway_Gothic_One, Poppins } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const antonio = Antonio({
+  weight: "100",         
+  variable: "--font-antonio",
+  subsets: ["latin"],
+});
+
+const fahkwang = Fahkwang({
+  weight: "200",         
+  variable: "--font-fahkwang",
+  subsets: ["latin"],
+});
+
+const bebas = Bebas_Neue({
+  weight: "400",         
+  variable: "--font-bebas-neue",
   subsets: ["latin"],
 });
 
@@ -25,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable}  ${fahkwang.variable} ${geistMono.variable} ${bebas.variable}  ${antonio.variable}  antialiased`}
       >
         {children}
       </body>

@@ -3,6 +3,7 @@ import project1 from "@/assets/project-1.webp";
 import project2 from "@/assets/project-2.webp";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { guttie } from "@/lib/fonts";
 
 const AboutSection = () => {
   return (
@@ -12,7 +13,7 @@ const AboutSection = () => {
         {/* Left Side */}
         <div className="md:w-1/2 flex flex-col gap-6">
         <motion.h4
-    className="text-amber-600 text-sm tracking-wider"
+    className="text-amber-600 text-sm font-[fahkwang] tracking-wider"
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.4 }}
@@ -28,15 +29,15 @@ const AboutSection = () => {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h3 className="text-4xl md:text-5xl font-bold leading-snug text-white">
-              <span className="block">Welcome to</span>
-              <span className="block">Our Company</span>
+            <h3 className={`"text-4xl md:text-5xl font-bold leading-snug ${guttie.className} text-white"`}>
+              <span className="block">WELCOME TO</span>
+              <span className="block">OUR COMPANY</span>
             </h3>
           </motion.div>
 
           {/* Paragraph */}
           <motion.p
-            className="mt-4 text-gray-400 text-sm"
+            className={`mt-4 text-gray-400 text-sm font-[fahkwang]`}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -72,19 +73,19 @@ const AboutSection = () => {
         <div className="md:w-1/2 flex flex-col gap-6">
           {/* Heading */}
           <motion.h2
-            className="text-4xl md:text-5xl font-bold text-white"
+            className={`text-4xl md:text-5xl font-bold text-white  ${guttie.className}`}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <span className="block">We craft exceptional</span>
-            <span className="block">event experiences</span>
+            <span className="block">WE CRAFT EXCEPTIONAL</span>
+            <span className="block">EVENT EXPERIENCES</span>
           </motion.h2>
 
           {/* Paragraph */}
           <motion.p
-            className="text-gray-400 text-sm"
+            className="text-gray-400 text-sm font-[fahkwang]"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -108,7 +109,7 @@ const AboutSection = () => {
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
-            <button className="mt-4 py-2 bg-black text-white font-medium border border-amber-600 rounded-3xl hover:bg-amber-600 hover:text-black transition-all duration-300 w-48 mx-auto">
+            <button className="mt-4 py-2 bg-black font-[fahkwang] text-white font-medium border border-amber-600 rounded-3xl hover:bg-amber-600 hover:text-black transition-all duration-300 w-48 mx-auto">
               Learn More
             </button>
           </motion.div>
