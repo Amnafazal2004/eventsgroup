@@ -8,9 +8,24 @@ export const segmenta = localFont({
 });
 
 
+// export const guttie = localFont({
+//   src: '../fonts/Guttie.woff',
+//   weight: '400',
+//   style: 'normal',
+//   display: 'swap',
+// });
+
 export const guttie = localFont({
-  src: '../fonts/Guttie.woff',
+  src: '../fonts/ClashDisplay-Semibold.otf',
   weight: '400',
+  style: 'normal',
+  display: 'swap',
+});
+
+
+export const guttie2 = localFont({
+  src: '../fonts/ClashDisplay-Semibold.otf',
+  weight: '600',
   style: 'normal',
   display: 'swap',
 });

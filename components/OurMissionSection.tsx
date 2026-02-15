@@ -75,8 +75,8 @@ const OurMissionSection = () => {
             viewport={{ once: true, amount: 0.7 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h3 className={`text-2xl md:text-3xl font-bold mb-4  ${guttie.className}`}>Our Mission</h3>
-            <p className="text-gray-400 font-[fakhwang] text-sm md:text-base leading-relaxed">
+            <h3 className={`text-2xl md:text-3xl font-bold mb-4  ${guttie.className}`}>OUR MISSION</h3>
+            <p className="text-gray-400 font-[fahkwang] text-sm md:text-base leading-relaxed">
               Our mission is to craft meaningful and unforgettable experiences
               that inspire innovation, spark creativity, and drive lasting
               success. We go beyond boundaries to transform ideas into impactful
