@@ -1,6 +1,7 @@
 "use client";
 import { Brain, Search, Layers } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { guttie } from "@/lib/fonts";
 
 const features = [
   { icon: Brain, title: "AI-Centered", desc: "We think about how AI can provide more efficiency and personalization, driving process innovation." },
@@ -14,7 +15,7 @@ const WhyChooseSection = () => {
   return (
     <section className="py-24 lg:py-32" ref={ref}>
       <div className="container mx-auto px-6 lg:px-12 text-center">
-        <span className={`section-label transition-all duration-500 ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
+        <span className={`section-label transition-all font-[fahkwang] duration-500 ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
           // Why Choose EventsFirstGroup
         </span>
 
@@ -32,12 +33,12 @@ const WhyChooseSection = () => {
               </div>
 
               {/* Title */}
-              <h3 className="font-display font-bold text-xl mt-6 text-white">
+              <h3 className={`font-display font-bold text-xl mt-6 text-white  ${guttie.className}`}>
                 {f.title}
               </h3>
 
               {/* Description */}
-              <p className="text-gray-400 text-sm mt-3 leading-relaxed">
+              <p className="text-gray-400 text-sm mt-3 font-[fahkwang] leading-relaxed">
                 {f.desc}
               </p>
 
