@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Antonio, Bebas_Neue, Fahkwang, Geist, Geist_Mono, Pathway_Gothic_One, Poppins } from "next/font/google";
-import "./globals.css";
+// import "./globals.css";
+import "./index.css"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
