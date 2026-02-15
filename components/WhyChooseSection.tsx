@@ -1,6 +1,7 @@
 "use client";
 import { Brain, Search, Layers, Zap } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { guttie } from "@/lib/fonts";
 
 const features = [
   {
@@ -30,11 +31,9 @@ const WhyChooseSection = () => {
 
   return (
     <section className="py-24 lg:py-32" ref={ref}>
-      <div className="container mx-auto px-6 lg:px-12">
-        <span
-          className={`section-label transition-all duration-500 ${isVisible ? "animate-fade-in" : "opacity-0"}`}
-        >
-          // Why Choose DreamsLab
+      <div className="container mx-auto px-6 lg:px-12 text-center">
+        <span className={`section-label transition-all font-[fahkwang] duration-500 ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
+          // Why Choose EventsFirstGroup
         </span>
 
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -47,10 +46,14 @@ const WhyChooseSection = () => {
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-500 group-hover:bg-primary/25 group-hover:scale-110 group-hover:rotate-6">
                 <f.icon className="w-6 h-6 text-primary transition-transform duration-300 group-hover:scale-110" />
               </div>
-              <h3 className="font-display font-bold text-xl mt-6 transition-colors duration-300 group-hover:text-primary">
+
+              {/* Title */}
+              <h3 className={`font-display font-bold text-xl mt-6 text-white  ${guttie.className}`}>
                 {f.title}
               </h3>
-              <p className="text-muted-foreground text-sm mt-3 leading-relaxed">
+
+              {/* Description */}
+              <p className="text-gray-400 text-sm mt-3 font-[fahkwang] leading-relaxed">
                 {f.desc}
               </p>
               {/* Animated underline */}

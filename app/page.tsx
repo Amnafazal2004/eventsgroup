@@ -6,18 +6,25 @@ import { useState } from "react"
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
-import ServicesSection from "@/components/ServicesSection";
+import WhatWedo from "@/components/WhatWeDo";
 import WhyChooseSection from "@/components/WhyChooseSection";
-import StatsSection from "@/components/StatsSection";
 import ProcessSection from "@/components/ProcessSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import TeamSection from "@/components/TeamSection";
-import PricingSection from "@/components/PricingSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import BlogSection from "@/components/BlogSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
+// import ProjectsSection from "@/components/ProjectsSection";
+// import TeamSection from "@/components/TeamSection";
+// import PricingSection from "@/components/PricingSection";
+// import TestimonialsSection from "@/components/TestimonialsSection";
+// import BlogSection from "@/components/BlogSection";
+// import ContactSection from "@/components/ContactSection";
+// import Footer from "@/components/Footer";
 import StatSection from "@/components/StatSection";
+import OurMissionSection from "@/components/OurMissionSection";
+import UpcomingEvents from "@/components/UpcomingEvents";
+// import StatSection from "@/components/StatSection";
+import ClientSection from "@/components/ClientSection";
+import UpcomingBoardrooms from "@/components/UpcomingBoardrooms";
+// import ProcessSection from "@/components/ProcessSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
    const { scrollY } = useScroll()
@@ -49,20 +56,27 @@ const Index = () => {
 
           
         </div>
-            <main className="mt-55">
-                <HeroSection />
+            <main className="pt-150">
+      <HeroSection />
       <AboutSection />
-      <ServicesSection />
+      <OurMissionSection/>
       <WhyChooseSection />
+      <WhatWedo />
+      <UpcomingEvents/>
       <StatSection />
+      <ClientSection/>
+      {/* <StatsSection /> */}
       <ProcessSection />
-      <ProjectsSection />
+      {/* <ProjectsSection />
       <TeamSection />
-      <PricingSection />
+      <PricingSection /> */}
       <TestimonialsSection />
-      <BlogSection />
+      {/* <BlogSection /> */}
       <ContactSection />
-      <Footer />
+      {/* <Footer /> */}
+      <UpcomingBoardrooms/>
+    
+  
                
             </main>
 

@@ -14,7 +14,13 @@
     "next": "16.1.6",
     "react": "19.2.3",
     "react-countup": "^6.5.3",
+<<<<<<< HEAD
     "react-dom": "19.2.3"
+=======
+    "react-dom": "19.2.3",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss-animate": "^1.0.7"
+>>>>>>> 97b7b4b49ed53beab2422e2af09516251f914f89
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
