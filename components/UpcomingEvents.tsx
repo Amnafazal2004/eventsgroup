@@ -51,29 +51,29 @@ const UpcomingEvents: React.FC = () => {
   const currentBatch = batches[batchIndex] || [];
 
   return (
-    <div className="mt-16">
+    <div className="mt-8 sm:mt-12 md:mt-16 px-4 sm:px-6 lg:px-8">
       <motion.section
-        className="bg-white text-black py-20 px-10 mx-auto max-w-6xl rounded-xl shadow-lg overflow-hidden"
+        className="bg-white text-black py-12 sm:py-16 md:py-20 px-6 sm:px-8 md:px-10 mx-auto max-w-6xl rounded-xl shadow-lg overflow-hidden"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.7 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {/* Header aligned with paragraph */}
-        <div className="max-w-4xl mx-auto mb-16 text-left">
+        <div className="max-w-4xl mx-auto mb-10 sm:mb-12 md:mb-16 text-left">
           <p className="text-orange-500 text-sm font-[fahkwang] mb-2">Events</p>
-          <h2 className={`text-3xl font-bold ${guttie.className}`}>UPCOMING EVENTS</h2>
-          <p className="mt-4 text-gray-600 font-[fahkwang]">
+          <h2 className={`text-2xl sm:text-3xl font-bold ${guttie.className}`}>UPCOMING EVENTS</h2>
+          <p className="mt-4 text-gray-600 font-[fahkwang] text-sm sm:text-base">
             Stay updated with our latest events. Each event brings new experiences and opportunities.
           </p>
         </div>
 
         {/* Event cards */}
-        <div className="relative w-full flex justify-center h-88">
+        <div className="relative w-full flex justify-center min-h-[24rem] sm:min-h-[26rem] md:h-88">
           <AnimatePresence mode="wait">
             <motion.div
               key={batchIndex}
-              className="flex space-x-6"
+              className="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap gap-6 justify-center items-center w-full"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
@@ -84,7 +84,7 @@ const UpcomingEvents: React.FC = () => {
                   key={event.id}
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ type: "spring", stiffness: 220, damping: 18 }}
-                  className="bg-gray-50 rounded-2xl shadow-lg overflow-hidden w-72 cursor-pointer flex-shrink-0"
+                  className="bg-gray-50 rounded-2xl shadow-lg overflow-hidden w-full sm:w-[calc(50%-0.75rem)] lg:w-72 cursor-pointer flex-shrink-0"
                 >
                   <div className="relative w-full h-44">
                     <Image
