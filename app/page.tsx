@@ -19,6 +19,8 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import OurMissionSection from "@/components/OurMissionSection";
 import UpcomingEvents from "@/components/UpcomingEvents";
+import StatSection from "@/components/StatSection";
+import ClientSection from "@/components/ClientSection";
 
 const Index = () => {
    const { scrollY } = useScroll()
@@ -57,13 +59,15 @@ const Index = () => {
       <WhyChooseSection />
       <WhatWedo />
       <UpcomingEvents/>
-      <StatsSection />
+      <StatSection />
+      <ClientSection/>
+      {/* <StatsSection /> */}
       <ProcessSection />
-      <ProjectsSection />
+      {/* <ProjectsSection />
       <TeamSection />
-      <PricingSection />
+      <PricingSection /> */}
       <TestimonialsSection />
-      <BlogSection />
+      {/* <BlogSection /> */}
       <ContactSection />
       <Footer />
                
