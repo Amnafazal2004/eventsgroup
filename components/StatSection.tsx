@@ -96,27 +96,23 @@ const StatsSection = () => {
 
   return (
     <section className="py-24 lg:py-32 bg-gradient-orange relative overflow-hidden" ref={ref}>
-      {/* Decorative animated shapes */}
-      <div className="absolute top-10 left-10 w-32 h-32 border border-background/10 rounded-full animate-spin-slow" />
-      <div className="absolute bottom-10 right-10 w-24 h-24 border border-background/10 rounded-full animate-float" />
-      <div className="absolute top-1/2 left-1/4 w-4 h-4 bg-background/10 rounded-full animate-bounce-subtle" />
-
+      
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <span className={`text-sm uppercase tracking-[0.3em] text-background/60 font-medium transition-all duration-500 ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
+        <span className={`text-sm uppercase tracking-[0.3em] text-black/60 font-medium transition-all duration-500 ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
           // The Numbers Speak
         </span>
 
-        <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((s, i) => (
             <div
               key={i}
               className={`text-center transition-all duration-700 ${isVisible ? "animate-fade-up" : "opacity-0"}`}
               style={{ animationDelay: `${i * 0.15}s` }}
             >
-              <div className="text-6xl lg:text-7xl font-display font-black text-background">
+              <div className="text-6xl lg:text-7xl font-display font-black text-black">
                 <Counter target={s.value} inView={isVisible} suffix={s.suffix} />
               </div>
-              <p className="text-background/70 font-medium mt-2 uppercase tracking-wider text-sm">
+              <p className="text-black/70 font-medium mt-2 uppercase tracking-wider text-sm">
                 {s.label}
               </p>
               {/* Subtle separator line */}
