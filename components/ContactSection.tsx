@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useState, useRef } from "react";
 import { Send } from "lucide-react";
+import { guttie } from "@/lib/fonts";
 
 const ContactSectionAlternative = () => {
   const ref = useRef(null);
@@ -32,7 +33,7 @@ const ContactSectionAlternative = () => {
               transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
               Hey! <motion.span 
-                className="text-4xl lg:text-6xl inline-block"
+                className={`text-4xl lg:text-6xl inline-block ${guttie.className}`}
                 animate={isInView ? { rotate: [0, 14, -8, 14, -4, 10, 0] } : {}}
                 transition={{ delay: 0.8, duration: 0.5 }}
               >

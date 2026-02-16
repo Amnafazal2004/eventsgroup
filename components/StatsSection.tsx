@@ -3,6 +3,7 @@ import { useRef, useEffect, useState } from "react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { motion } from "motion/react";
 import CountUp from "react-countup";
+import { guttie } from "@/lib/fonts";
 
 // Each bar has its own visual height (px) for display
   const stats = [
@@ -64,7 +65,7 @@ const StatsSection = () => {
                   style={{ transformOrigin: "bottom", height: `${stat.height}px` }}
                   className="w-full bg-black flex flex-col justify-between p-4"
                 >
-                  <h4 className="text-white text-lg sm:text-xl md:text-2xl font-bold">
+                  <h4 className={`text-white text-lg sm:text-xl md:text-2xl font-bold  ${guttie.className}`}>
                     {isVisible && (
                       <CountUp start={0} end={stat.value} duration={1.5} />
                     )}

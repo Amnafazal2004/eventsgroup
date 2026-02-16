@@ -1,5 +1,6 @@
 "use client";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { guttie } from "@/lib/fonts";
 
 const ProcessSection = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -12,7 +13,7 @@ const ProcessSection = () => {
           className={`mt-20 glass-card border-gray-300 rounded-2xl p-8 lg:p-12 text-center hover-lift transition-all duration-700 ${isVisible ? "animate-scale-up" : "opacity-0"}`}
           style={{ animationDelay: "0.8s" }}
         >
-          <h3 className="text-4xl lg:text-5xl font-display font-black">
+          <h3 className={`text-4xl lg:text-5xl font-display font-black ${guttie.className}`}>
             Ready?
           </h3>
           <p className="text-muted-foreground mt-4 text-lg">

@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import React, { useState, useEffect, useRef } from 'react';
 import { Play, Star } from 'lucide-react';
+import { guttie } from "@/lib/fonts";
+
 
 const headingText = "Success Stories";
 const headingWords = headingText.split(" ");
@@ -131,7 +133,7 @@ const TestimonialsCarousel = () => {
             </span>
             
             <motion.h2
-              className="text-4xl lg:text-5xl font-bold mt-4 leading-tight"
+              className={`text-4xl lg:text-5xl ${guttie.className} font-bold mt-4 leading-tight`}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.7 }}

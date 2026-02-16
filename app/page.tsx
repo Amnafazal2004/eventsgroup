@@ -9,20 +9,11 @@ import AboutSection from "@/components/AboutSection";
 import WhatWedo from "@/components/WhatWeDo";
 import WhyChooseSection from "@/components/WhyChooseSection";
 import ProcessSection from "@/components/ProcessSection";
-// import ProjectsSection from "@/components/ProjectsSection";
-// import TeamSection from "@/components/TeamSection";
-// import PricingSection from "@/components/PricingSection";
-// import TestimonialsSection from "@/components/TestimonialsSection";
-// import BlogSection from "@/components/BlogSection";
-// import ContactSection from "@/components/ContactSection";
-// import Footer from "@/components/Footer";
 import StatSection from "@/components/StatSection";
 import OurMissionSection from "@/components/OurMissionSection";
 import UpcomingEvents from "@/components/UpcomingEvents";
-// import StatSection from "@/components/StatSection";
 import ClientSection from "@/components/ClientSection";
 import UpcomingBoardrooms from "@/components/UpcomingBoardrooms";
-// import ProcessSection from "@/components/ProcessSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -67,8 +58,8 @@ const Index = () => {
       <WhatWedo />
       <UpcomingEvents/>
       <UpcomingBoardrooms/>
-      {/* <StatSection /> */}
-      <StatsSection />
+      <StatSection />
+      {/* <StatsSection /> */}
       <ProcessSection />
       <TestimonialsSection />
       <ContactSection />
