@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Antonio, Bebas_Neue, Fahkwang, Geist, Geist_Mono, Pathway_Gothic_One, Poppins } from "next/font/google";
 // import "./globals.css";
 import "./index.css"
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,6 +48,7 @@ export default function RootLayout({
         className={`${geistSans.variable}  ${fahkwang.variable} ${geistMono.variable} ${bebas.variable}  ${antonio.variable}  antialiased`}
       >
         {children}
+         <Toaster richColors position="top-right" />
       </body>
     </html>
   );
