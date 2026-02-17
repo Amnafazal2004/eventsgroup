@@ -56,8 +56,8 @@ const UpcomingEvents: React.FC = () => {
         className="bg-white text-black py-12 sm:py-16 md:py-20 px-6 sm:px-8 md:px-10 mx-auto max-w-6xl rounded-xl shadow-lg overflow-hidden"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.7 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {/* Header aligned with paragraph */}
         <div className="max-w-4xl mx-auto mb-10 sm:mb-12 md:mb-16 text-left">
