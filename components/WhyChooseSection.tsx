@@ -38,7 +38,7 @@ const WhyChooseSection = () => {
               </h3>
 
               {/* Description */}
-              <p className="text-gray-400 text-sm mt-3 font-[fahkwang] leading-relaxed">
+              <p className="text-gray-300 text-sm mt-3 font-[fahkwang] leading-relaxed">
                 {f.desc}
               </p>
 

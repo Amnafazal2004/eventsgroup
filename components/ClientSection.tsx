@@ -4,9 +4,9 @@ const clientLogos = [
   {
     name: "Envato",
     svg: (
-      <svg width="100" height="28" viewBox="0 0 100 28" fill="currentColor" className="text-foreground">
+      <svg width="100" height="40" viewBox="0 0 100 28" fill="currentColor" className="text-foreground">
         <path d="M12 2C6.5 2 3 6.5 3 11c0 6 5 13 9 15 4-2 9-9 9-15 0-4.5-3.5-9-9-9z" />
-        <text x="24" y="19" fontSize="14" fontWeight="700" fontFamily="inherit">envato</text>
+        <text x="24" y="19" fontSize="25" fontWeight="700" fontFamily="inherit">envato</text>
       </svg>
     ),
   },
@@ -63,10 +63,10 @@ const ClientSection = () => {
   const { ref: imgRef, isVisible: imgVisible } = useScrollAnimation();
 
   return (
-    <section id="home" className="relative overflow-hidden">
+    <section id="home" className=" mt-12 relative overflow-hidden">
 
       {/* Client logos marquee */}
-      <div className=" border-t border-b border-border py-6 md:py-8 overflow-hidden">
+      <div className=" border-t border-b border-border py-10 md:py-11 overflow-hidden">
        <div className="flex animate-marquee gap-10 md:gap-16 items-center">
   {clientLogos.concat(clientLogos).map((logo, i) => (
     <span key={i} className="relative overflow-hidden cursor-default group h-8 md:h-10 flex items-center shrink-0">

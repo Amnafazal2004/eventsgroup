@@ -2,18 +2,18 @@
 import { motion } from "framer-motion";
 import React, { useState, useEffect, useRef } from 'react';
 import { Play, Star } from 'lucide-react';
+import { guttie } from "@/lib/fonts";
 
-const headingText = "Client Success Stories";
+
+const headingText = "Success Stories";
 const headingWords = headingText.split(" ");
 
 interface Testimonial {
   id: string;
   name: string;
   role: string;
-  company: string;
   img: string;
   title: string;
-  rating: number;
 }
 
 // Sample testimonial data - replace with your actual data and YouTube video IDs
@@ -22,46 +22,36 @@ const testimonials: Testimonial[] = [
     id: 'dQw4w9WgXcQ',
     name: 'John Fitzgerald',
     role: 'Design Manager',
-    company: 'HBO',
     img: '/api/placeholder/48/48',
-    title: 'Outstanding creativity and professionalism!',
-    rating: 73
+    title: 'Outstanding creativity and professionalism!'
   },
   {
     id: 'jNQXAC9IVRw',
     name: 'Anne Weying',
     role: 'Cloud Sales Executive',
-    company: 'AMD',
     img: '/api/placeholder/48/48',
-    title: 'Exceptional service and dedication.',
-    rating: 91
+    title: 'Exceptional service and dedication.'
   },
   {
     id: 'kJQP7kiw5Fk',
     name: 'Michael Torres',
     role: 'CTO',
-    company: 'Vertex Labs',
     img: '/api/placeholder/48/48',
-    title: 'Transformed our digital presence completely.',
-    rating: 85
+    title: 'Transformed our digital presence completely.'
   },
   {
     id: '9bZkp7q19f0',
     name: 'Sarah Chen',
     role: 'Marketing Lead',
-    company: 'Pulse Digital',
     img: '/api/placeholder/48/48',
-    title: 'Creative vision meets flawless execution.',
-    rating: 78
+    title: 'Creative vision meets flawless execution.'
   },
   {
     id: 'M7lc1UVf-VE',
     name: 'David Park',
     role: 'Product Director',
-    company: 'Netflix',
     img: '/api/placeholder/48/48',
-    title: 'Best creative partner we have ever worked with.',
-    rating: 88
+    title: 'Best creative partner we have ever worked with.'
   }
 ];
 
@@ -131,7 +121,7 @@ const TestimonialsCarousel = () => {
 
   return (
     <section className="py-12 overflow-hidden bg-gradient-to-b from-background to-background/50" ref={sectionRef}>
-      <div className="container mx-auto px-6 lg:px-12">
+      <div className="container mx-auto px-6 lg:px-14">
         {/* Top area: two columns */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 mb-10">
           {/* Left - Heading */}
@@ -143,7 +133,7 @@ const TestimonialsCarousel = () => {
             </span>
             
             <motion.h2
-              className="text-4xl lg:text-5xl font-bold mt-4 leading-tight"
+              className={`text-4xl lg:text-5xl ${guttie.className} font-bold mt-4 leading-tight`}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.7 }}
@@ -221,7 +211,7 @@ const TestimonialsCarousel = () => {
         >
           <div className="relative w-full mx-auto px-4 sm:px-6 lg:px-8">
             {/* Cards Container */}
-            <div className="relative h-[400px] sm:h-[500px] lg:h-[500px] flex items-center justify-center overflow-hidden">
+            <div className="relative h-[300px] sm:h-[400px] lg:h-[400px] flex items-center justify-center overflow-hidden">
               <div className="relative w-full h-full flex items-center justify-center" style={{ perspective: '2000px' }}>
                 {testimonials.map((testimonial, index) => {
                   const diff = index - currentIndex;
@@ -286,7 +276,7 @@ const TestimonialsCarousel = () => {
                         isCenter ? 'border-orange-500/50 shadow-orange-500/20' : 'border-gray-700/50'
                       }`}>
                         {/* Video/Thumbnail Section */}
-                        <div className="relative w-full bg-black" style={{ height: '360px' }}>
+                        <div className="relative w-full bg-black" style={{ height: '300px' }}>
                           {!isPlaying ? (
                             <>
                               <img
@@ -299,22 +289,7 @@ const TestimonialsCarousel = () => {
                                 }}
                               />
                               
-                              {/* Company Logo Badge */}
-                              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-white/90 backdrop-blur-sm px-2 py-1 sm:px-3 sm:py-1.5 rounded-full flex items-center gap-1.5 sm:gap-2">
-                                <div className="w-4 h-4 sm:w-5 sm:h-5 bg-blue-600 rounded-full flex items-center justify-center">
-                                  <span className="text-white text-[10px] sm:text-xs font-bold">
-                                    {testimonial.company.charAt(0)}
-                                  </span>
-                                </div>
-                                <span className="text-[10px] sm:text-xs font-semibold text-gray-900">
-                                  {testimonial.company}
-                                </span>
-                              </div>
-
-                              {/* Rating Badge */}
-                              <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-black/70 backdrop-blur-sm px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full">
-                                <span className="text-white font-bold text-base sm:text-lg">{testimonial.rating}°</span>
-                              </div>
+                              
 
                               {/* Play Button Overlay */}
                               {isCenter && (

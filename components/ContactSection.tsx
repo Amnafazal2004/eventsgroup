@@ -1,98 +1,98 @@
-//text-pprimary: dark-black (should be orange )
-// bg-amber-600
-// text-muted-foreground: white 
-// border-primary: 
+"use client";
 
-"use client"
-
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, useInView } from "framer-motion";
+import { useState, useRef } from "react";
 import { Send } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { guttie } from "@/lib/fonts";
 
 const ContactSection = () => {
-  const { ref, isVisible } = useScrollAnimation();
-  const [formData, setFormData] = useState({ name: "", email: "", industry: "", phone: "", message: "" });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    industry: "",
+    phone: "",
+    message: "",
+  });
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
   return (
-    <section id="contact" className="py-24 lg:py-32" ref={ref}>
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Left */}
-          <div>
-            <span className={`section-label transition-all duration-500 ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
+    <section
+      id="contact"
+      className="py-24 sm:py-28 lg:py-32 px-6 sm:px-8 lg:px-12 overflow-hidden"
+      ref={ref}
+    >
+      <div className="container mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
+          {/* Left - Content */}
+          <div className="space-y-6">
+            <motion.span
+              className="section-label inline-block"
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
               Let's Work Together
-            </span>
-            <h2
-              className={`text-5xl lg:text-7xl font-display font-black mt-4 transition-all duration-700 ${
-                isVisible ? "animate-fade-up" : "opacity-0"
-              }`}
-              style={{ animationDelay: "0.1s" }}
+            </motion.span>
+
+            <motion.h2
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-display font-black"
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              Hey! <span className="text-4xl lg:text-6xl inline-block animate-wiggle">👋</span>
-            </h2>
-            <p
-              className={`text-muted-foreground mt-6 max-w-md leading-relaxed text-lg transition-all duration-500 ${
-                isVisible ? "animate-fade-up" : "opacity-0"
-              }`}
-              style={{ animationDelay: "0.2s" }}
+              Hey!{" "}
+              <motion.span
+                className={`inline-block ${guttie.className} text-2xl sm:text-4xl lg:text-6xl`}
+                animate={
+                  isInView
+                    ? { rotate: [0, 14, -8, 14, -4, 10, 0] }
+                    : {}
+                }
+                transition={{ delay: 0.8, duration: 0.5 }}
+              >
+                👋
+              </motion.span>
+            </motion.h2>
+
+            <motion.p
+              className="text-muted-foreground text-base sm:text-lg max-w-md leading-relaxed"
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
-              We're here to bring your creative visions to life. If you'd like to collaborate, inquire about our services,
-              or simply say hello, feel free to reach out!
-            </p>
-            <p
-              className={`mt-8 text-muted-foreground transition-all duration-500 ${
-                isVisible ? "animate-fade-up" : "opacity-0"
-              }`}
-              style={{ animationDelay: "0.3s" }}
+              We're here to bring your creative visions to life. If you'd like
+              to collaborate, inquire about our services, or simply say hello,
+              feel free to reach out!
+            </motion.p>
+
+            <motion.p
+              className="text-muted-foreground text-base sm:text-lg"
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
-              We're passionate about innovation, brilliant ideas and the execution that brings it all together in one
-              beautiful experience.
-            </p>
+              We're passionate about innovation, brilliant ideas and the
+              execution that brings it all together in one beautiful experience.
+            </motion.p>
           </div>
 
-          {/* Header Section */}
-        {/* <div className="text-center mb-16 lg:mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6 }}
-            className="inline-block"
-          >
-            <span className="text-sm uppercase tracking-[0.3em] text-primary font-medium">
-              // Let's Work Together
-            </span>
-          </motion.div>
-          
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-5xl lg:text-7xl font-display font-black mt-6 mb-6"
-          >
-            Got a Vision?{" "}
-            <span className="block text-gradient-orange">Let's Bring It to Life!</span>
-          </motion.h2>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-muted-foreground text-lg max-w-2xl mx-auto"
-          >
-            Do you have a branding and communications project in mind? Contact us today and we will make your plan a reality.
-          </motion.p>
-        </div> */}
-
-
           {/* Right - Form */}
-          <form
-            className={`space-y-6 transition-all duration-700 ${isVisible ? "animate-fade-left" : "opacity-0"}`}
-            style={{ animationDelay: "0.3s" }}
+          <motion.form
+            className="space-y-6 w-full"
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
             onSubmit={(e) => e.preventDefault()}
           >
-            <div className="grid md:grid-cols-2 gap-6">
+            {/* Row 1 */}
+            <motion.div
+              className="grid md:grid-cols-2 gap-4 sm:gap-6"
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+              transition={{ duration: 0.5, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            >
               <div className="group">
                 <label
                   className={`text-sm block mb-2 transition-colors duration-300 ${
@@ -104,17 +104,19 @@ const ContactSection = () => {
                 <input
                   type="text"
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                   onFocus={() => setFocusedField("name")}
                   onBlur={() => setFocusedField(null)}
-                  className="w-full bg-secondary border border-border rounded-xl px-4 py-3 text-foreground focus:border-primary focus:outline-none focus:shadow-[0_0_20px_hsl(var(--primary)/0.15)] transition-all duration-500"
+                  className="w-full bg-secondary border border-border rounded-xl px-4 py-3 text-foreground focus:border-orange-500 focus:outline-none focus:shadow-[0_0_20px_rgba(249,115,22,0.15)] transition-all duration-500"
                   placeholder="John Doe"
                 />
               </div>
               <div className="group">
                 <label
                   className={`text-sm block mb-2 transition-colors duration-300 ${
-                    focusedField === "email" ? "text-primary" : "text-muted-foreground"
+                    focusedField === "email" ? "text-orange-500" : "text-muted-foreground"
                   }`}
                 >
                   Your Email *
@@ -122,20 +124,30 @@ const ContactSection = () => {
                 <input
                   type="email"
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   onFocus={() => setFocusedField("email")}
                   onBlur={() => setFocusedField(null)}
-                  className="w-full bg-secondary border border-border rounded-xl px-4 py-3 text-foreground focus:border-primary focus:outline-none focus:shadow-[0_0_20px_hsl(var(--primary)/0.15)] transition-all duration-500"
+                  className="w-full bg-secondary border border-border rounded-xl px-4 py-3 text-foreground focus:border-orange-500 focus:outline-none focus:shadow-[0_0_20px_rgba(249,115,22,0.15)] transition-all duration-500"
                   placeholder="john@example.com"
                 />
               </div>
-            </div>
+            </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            {/* Row 2 */}
+            <motion.div
+              className="grid md:grid-cols-2 gap-4 sm:gap-6"
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+              transition={{ duration: 0.5, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            >
               <div className="group">
                 <label
                   className={`text-sm block mb-2 transition-colors duration-300 ${
-                    focusedField === "industry" ? "text-primary" : "text-muted-foreground"
+                    focusedField === "industry"
+                      ? "text-orange-500"
+                      : "text-muted-foreground"
                   }`}
                 >
                   Industry *
@@ -143,18 +155,19 @@ const ContactSection = () => {
                 <input
                   type="text"
                   value={formData.industry}
-                  onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, industry: e.target.value })
+                  }
                   onFocus={() => setFocusedField("industry")}
                   onBlur={() => setFocusedField(null)}
-                  className="w-full bg-secondary border border-border rounded-xl px-4 py-3 text-foreground focus:border-primary focus:outline-none focus:shadow-[0_0_20px_hsl(var(--primary)/0.15)] transition-all duration-500"
+                  className="w-full bg-secondary border border-border rounded-xl px-4 py-3 text-foreground focus:border-orange-500 focus:outline-none focus:shadow-[0_0_20px_rgba(249,115,22,0.15)] transition-all duration-500"
                   placeholder="Industry"
                 />
               </div>
-
               <div className="group">
                 <label
                   className={`text-sm block mb-2 transition-colors duration-300 ${
-                    focusedField === "phone" ? "text-primary" : "text-muted-foreground"
+                    focusedField === "phone" ? "text-orange-500" : "text-muted-foreground"
                   }`}
                 >
                   Your Phone Number *
@@ -162,19 +175,26 @@ const ContactSection = () => {
                 <input
                   type="tel"
                   value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, phone: e.target.value })
+                  }
                   onFocus={() => setFocusedField("phone")}
                   onBlur={() => setFocusedField(null)}
-                  className="w-full bg-secondary border border-border rounded-xl px-4 py-3 text-foreground focus:border-primary focus:outline-none focus:shadow-[0_0_20px_hsl(var(--primary)/0.15)] transition-all duration-500"
+                  className="w-full bg-secondary border border-border rounded-xl px-4 py-3 text-foreground focus:border-orange-500 focus:outline-none focus:shadow-[0_0_20px_rgba(249,115,22,0.15)] transition-all duration-500"
                   placeholder="123-456-7890"
                 />
               </div>
-            </div>
+            </motion.div>
 
-            <div>
+            {/* Message */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+              transition={{ duration: 0.5, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            >
               <label
                 className={`text-sm block mb-2 transition-colors duration-300 ${
-                  focusedField === "message" ? "text-primary" : "text-muted-foreground"
+                  focusedField === "message" ? "text-orange-500" : "text-muted-foreground"
                 }`}
               >
                 Message
@@ -182,31 +202,37 @@ const ContactSection = () => {
               <textarea
                 rows={5}
                 value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
                 onFocus={() => setFocusedField("message")}
                 onBlur={() => setFocusedField(null)}
-                className="w-full bg-secondary border border-border rounded-xl px-4 py-3 text-foreground focus:border-primary focus:outline-none focus:shadow-[0_0_20px_hsl(var(--primary)/0.15)] transition-all duration-500 resize-none"
+                className="w-full bg-secondary border border-border rounded-xl px-4 py-3 text-foreground focus:border-orange-500 focus:outline-none focus:shadow-[0_0_20px_rgba(249,115,22,0.15)] transition-all duration-500 resize-none"
                 placeholder="Write what you want to say!"
               />
-            </div>
+            </motion.div>
 
-            <button
+            {/* Submit Button */}
+            <motion.button
               type="submit"
-              className="flex items-center gap-2 bg-orange-500 text-primary-foreground px-8 py-4 rounded-full font-medium hover:bg-orange-dark hover:shadow-[0_0_40px_hsl(var(--primary)/0.4)] hover:scale-105 active:scale-95 transition-all duration-500 group"
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+              transition={{ duration: 0.5, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ scale: 1.05, boxShadow: "0 0 40px rgba(249,115,22,0.4)" }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 bg-orange-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium hover:bg-orange-600 transition-colors duration-300 group"
             >
               Let's Work
-              <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </button>
-            {/* <button 
-              type="submit"
-              className="flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-full font-medium 
-                        hover:bg-orange-500 hover:scale-105 active:scale-95 transition-all duration-500 group"
-            >
-              Let's Work
-              <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </button> */}
-
-          </form>
+              <motion.div
+                animate={
+                  isInView ? { x: [0, 4, 0], y: [0, -4, 0] } : {}
+                }
+                transition={{ delay: 1.3, duration: 0.6, ease: "easeInOut" }}
+              >
+                <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </motion.div>
+            </motion.button>
+          </motion.form>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 "use client";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { guttie } from "@/lib/fonts";
 
 const ProcessSection = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -12,7 +13,7 @@ const ProcessSection = () => {
           className={`mt-20 glass-card border-gray-300 rounded-2xl p-8 lg:p-12 text-center hover-lift transition-all duration-700 ${isVisible ? "animate-scale-up" : "opacity-0"}`}
           style={{ animationDelay: "0.8s" }}
         >
-          <h3 className="text-4xl lg:text-5xl font-display font-black">
+          <h3 className={`text-4xl lg:text-5xl font-display font-black ${guttie.className}`}>
             Ready?
           </h3>
           <p className="text-muted-foreground mt-4 text-lg">
@@ -31,7 +32,6 @@ const ProcessSection = () => {
 };
 
 export default ProcessSection;
-
 
 // "use client";
 // import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -64,59 +64,42 @@ export default ProcessSection;
 //   }));
 
 //   return (
-//     <section className="relative py-24 lg:py-32 overflow-hidden" ref={ref}>
-//       {/* Animated Background Gradient */}
-//       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent opacity-50" />
-      
-//       {/* Floating Particles */}
-//       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-//         {particles.map((particle) => (
-//           <motion.div
-//             key={particle.id}
-//             className="absolute w-1 h-1 bg-primary/30 rounded-full"
-//             style={{
-//               left: `${particle.x}%`,
-//               top: `${particle.y}%`,
-//             }}
-//             animate={{
-//               y: [0, -30, 0],
-//               opacity: [0, 1, 0],
-//               scale: [0, 1, 0],
-//             }}
-//             transition={{
-//               duration: particle.duration,
-//               repeat: Infinity,
-//               delay: particle.delay,
-//               ease: "easeInOut",
-//             }}
-//           />
-//         ))}
+//     <section className="relative py-24 lg:py-32 overflow-hidden bg-background" ref={ref}>
+//       {/* Subtle Background Pattern */}
+//       <div className="absolute inset-0 opacity-[0.015]">
+//         <div 
+//           className="absolute inset-0" 
+//           style={{
+//             backgroundImage: `radial-gradient(circle at 2px 2px, hsl(var(--primary)) 1px, transparent 0)`,
+//             backgroundSize: '40px 40px',
+//           }} 
+//         />
 //       </div>
 
-//       {/* Radial Gradient Orbs */}
+//       {/* Soft Gradient Orbs - More Subtle */}
 //       <motion.div
-//         className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
+//         className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px]"
 //         animate={{
-//           scale: [1, 1.2, 1],
-//           opacity: [0.3, 0.5, 0.3],
+//           scale: [1, 1.1, 1],
+//           opacity: [0.3, 0.4, 0.3],
 //         }}
 //         transition={{
-//           duration: 4,
+//           duration: 9,
 //           repeat: Infinity,
 //           ease: "easeInOut",
 //         }}
 //       />
 //       <motion.div
-//         className="absolute top-1/2 right-1/4 w-96 h-96 bg-orange/20 rounded-full blur-3xl"
+//         className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-orange/5 rounded-full blur-[100px]"
 //         animate={{
-//           scale: [1.2, 1, 1.2],
-//           opacity: [0.5, 0.3, 0.5],
+//           scale: [1.1, 1, 1.1],
+//           opacity: [0.4, 0.3, 0.4],
 //         }}
 //         transition={{
-//           duration: 4,
+//           duration: 8,
 //           repeat: Infinity,
 //           ease: "easeInOut",
-//           delay: 2,
+//           delay: 4,
 //         }}
 //       />
 
@@ -128,88 +111,29 @@ export default ProcessSection;
 //           transition={{ duration: 0.8, delay: 0.2 }}
 //           className="relative"
 //         >
-//           {/* Glowing Border Effect */}
-//           <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-orange to-primary rounded-3xl opacity-0 group-hover:opacity-100 blur-sm transition-all duration-500 animate-shimmer bg-[length:200%_auto]" />
-          
 //           {/* Card Container with Multiple Layers */}
 //           <div 
 //             ref={cardRef}
 //             onMouseMove={handleMouseMove}
-//             className="relative bg-card/80 rounded-3xl overflow-hidden group transition-all duration-500"
-//             style={{
-//               backdropFilter: `blur(${12 + (mousePosition.x + mousePosition.y) / 20}px)`,
-//               border: '1px solid hsl(var(--border) / 0.5)',
-//             }}
+//             className="relative bg-card/50 backdrop-blur-xl rounded-3xl overflow-hidden group transition-all duration-700 border border-border/40 hover:border-primary/30"
 //           >
-//             {/* Dynamic Background Density Layer */}
-//             <motion.div
-//               className="absolute inset-0 pointer-events-none transition-all duration-300"
-//               style={{
-//                 background: `radial-gradient(800px circle at ${mousePosition.x}% ${mousePosition.y}%, 
-//                   hsl(var(--card) / 0.95) 0%, 
-//                   hsl(var(--card) / 0.7) 50%,
-//                   hsl(var(--card) / 0.8) 100%)`,
-//                 opacity: 0,
-//               }}
-//               animate={{
-//                 opacity: 1,
-//               }}
-//             />
-
-//             {/* Animated Grid Pattern with Dynamic Opacity */}
-//             <motion.div 
-//               className="absolute inset-0 transition-opacity duration-300"
-//               style={{
-//                 opacity: 0.03,
-//               }}
-//               whileHover={{
-//                 opacity: 0.08,
-//               }}
-//             >
+//             {/* Animated Grid Pattern - Subtle */}
+//             <div className="absolute inset-0 opacity-[0.02] group-hover:opacity-[0.04] transition-opacity duration-700">
 //               <div className="absolute inset-0" style={{
 //                 backgroundImage: `linear-gradient(hsl(var(--primary)) 1px, transparent 1px),
 //                                  linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)`,
 //                 backgroundSize: '50px 50px',
 //               }} />
-//             </motion.div>
+//             </div>
 
-//             {/* Interactive Mouse-Tracking Gradient */}
-//             <motion.div
-//               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+//             {/* Interactive Mouse-Tracking Gradient - Smooth */}
+//             <div
+//               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
 //               style={{
-//                 background: `radial-gradient(600px circle at ${mousePosition.x}% ${mousePosition.y}%, 
-//                   hsl(var(--primary) / 0.15) 0%, 
-//                   hsl(var(--orange) / 0.1) 25%,
-//                   transparent 50%)`,
-//               }}
-//             />
-
-//             {/* Secondary Glow Layer */}
-//             <motion.div
-//               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none blur-xl"
-//               style={{
-//                 background: `radial-gradient(400px circle at ${mousePosition.x}% ${mousePosition.y}%, 
-//                   hsl(var(--primary) / 0.2) 0%, 
+//                 background: `radial-gradient(800px circle at ${mousePosition.x}% ${mousePosition.y}%, 
+//                   hsl(var(--primary) / 0.08) 0%, 
+//                   hsl(var(--orange) / 0.05) 30%,
 //                   transparent 60%)`,
-//               }}
-//             />
-
-//             {/* Frosted Glass Effect on Hover */}
-//             <motion.div
-//               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-//               style={{
-//                 background: `radial-gradient(500px circle at ${mousePosition.x}% ${mousePosition.y}%, 
-//                   rgba(255, 255, 255, 0.03) 0%, 
-//                   transparent 60%)`,
-//                 backdropFilter: 'blur(2px)',
-//               }}
-//             />
-
-//             {/* Noise Texture Overlay for Depth */}
-//             <div 
-//               className="absolute inset-0 opacity-0 group-hover:opacity-[0.15] transition-opacity duration-500 pointer-events-none mix-blend-overlay"
-//               style={{
-//                 backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E")`,
 //               }}
 //             />
 
@@ -287,53 +211,32 @@ export default ProcessSection;
 //               >
 //                 <a
 //                   href="#contact"
-//                   className="group/btn relative inline-flex items-center gap-3 overflow-hidden"
-//                   onMouseMove={(e) => {
-//                     const rect = e.currentTarget.getBoundingClientRect();
-//                     const x = ((e.clientX - rect.left) / rect.width) * 100;
-//                     const y = ((e.clientY - rect.top) / rect.height) * 100;
-//                     e.currentTarget.style.setProperty('--mouse-x', `${x}%`);
-//                     e.currentTarget.style.setProperty('--mouse-y', `${y}%`);
-//                   }}
+//                   className="group/btn relative inline-flex items-center gap-3 overflow-hidden rounded-full"
 //                 >
-//                   {/* Button Glow Effect */}
-//                   <div className="absolute -inset-1 bg-gradient-to-r from-primary via-orange to-primary rounded-full opacity-0 group-hover/btn:opacity-100 blur-lg transition-all duration-500 animate-shimmer bg-[length:200%_auto]" />
-                  
 //                   {/* Button Background */}
-//                   <div className="absolute inset-0 bg-gradient-to-r from-primary to-orange rounded-full transition-transform duration-500 group-hover/btn:scale-105" />
+//                   <div className="absolute inset-0 bg-gradient-to-r from-primary to-orange rounded-full transition-all duration-500 group-hover/btn:scale-105" />
                   
-//                   {/* Spotlight on hover */}
+//                   {/* Subtle Spotlight on hover */}
 //                   <div 
-//                     className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 rounded-full"
+//                     className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500 rounded-full"
 //                     style={{
-//                       background: 'radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255,255,255,0.2) 0%, transparent 50%)',
+//                       background: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.15) 0%, transparent 60%)',
 //                     }}
 //                   />
 
 //                   {/* Button Content */}
 //                   <span className="relative z-10 px-10 py-5 text-lg font-bold text-white flex items-center gap-3">
-//                     <motion.span
-//                       animate={{ x: [0, 5, 0] }}
-//                       transition={{ duration: 1.5, repeat: Infinity }}
-//                     >
-//                       Get Your Free Quote
-//                     </motion.span>
+//                     <span>Get Your Free Quote</span>
 //                     <motion.div
-//                       animate={{ x: [0, 5, 0] }}
-//                       transition={{ duration: 1.5, repeat: Infinity, delay: 0.2 }}
+//                       animate={{ x: [0, 3, 0] }}
+//                       transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
 //                     >
 //                       <ArrowRight className="w-5 h-5" />
 //                     </motion.div>
 //                   </span>
 
-//                   {/* Ripple Effect Container */}
-//                   <motion.div
-//                     className="absolute inset-0 rounded-full"
-//                     initial={{ scale: 0, opacity: 0.5 }}
-//                     whileHover={{ scale: 1.5, opacity: 0 }}
-//                     transition={{ duration: 0.6 }}
-//                     style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%)' }}
-//                   />
+//                   {/* Subtle Shine Effect */}
+//                   <div className="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 //                 </a>
 //               </motion.div>
 
