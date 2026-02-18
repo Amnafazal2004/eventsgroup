@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { Search, Menu, X, ArrowRight } from "lucide-react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react"
+import Image from "next/image";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,20 +13,16 @@ const Header = () => {
       <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between h-20">
         <div className="flex items-center gap-3">
           {/* Logo */}
-          <div className="flex items-center gap-3 group cursor-pointer">
-            <div className="w-8 h-8 bg-primary rounded-sm flex items-center justify-center transition-transform duration-300 group-hover:rotate-90 group-hover:scale-110">
-              <span className="text-primary-foreground font-display font-bold text-lg">
-                ✦
-              </span>
-            </div>
-            <div className="font-display font-bold text-sm leading-tight transition-colors duration-300 group-hover:text-primary">
-              <span>The</span>
-              <br />
-              <span>DreamsLab</span>
-              <br />
-              <span>Digital Studio.</span>
-            </div>
-          </div>
+          <div className="w-30 h-30 relative transition-transform duration-300 group-hover:scale-110">
+  <Image
+    src={logo}
+    alt="DreamsLab Logo"
+    fill
+    className="object-contain"
+    priority
+  />
+</div>
+
 
           {/* Nav dots */}
           <button

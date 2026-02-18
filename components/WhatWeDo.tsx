@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import project3 from "@/assets/project-4.webp";
-import project1 from "@/assets/project-1.webp";
+import whatwedoSection from "@/assets/whatwedoSection.png";
+import whatwedoSection2 from "@/assets/whatwedoSection2.png";
 import { guttie } from "@/lib/fonts";
 import {
   Accordion,
@@ -40,7 +40,7 @@ const ServicesSection = () => {
             <div className="block lg:hidden w-full max-w-[320px]">
               <div className="relative w-full h-[400px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src={project1}
+                  src={whatwedoSection}
                   alt="project"
                   fill
                   className="object-cover"
@@ -61,7 +61,7 @@ const ServicesSection = () => {
                 style={{ left: "80px", zIndex: 1 }}
               >
                 <Image
-                  src={project3}
+                  src={whatwedoSection2}
                   alt="project-back"
                   fill
                   className="object-cover"
@@ -82,7 +82,7 @@ const ServicesSection = () => {
                 style={{ left: "140px", zIndex: 2 }}
               >
                 <Image
-                  src={project1}
+                  src={whatwedoSection}
                   alt="project-front"
                   fill
                   className="object-cover"
