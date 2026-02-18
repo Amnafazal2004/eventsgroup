@@ -16,7 +16,7 @@ const ProcessSection = () => {
           <h3 className={`text-4xl lg:text-5xl font-display font-black ${guttie.className}`}>
             Ready?
           </h3>
-          <p className="text-muted-foreground mt-4 text-lg">
+          <p className="text-muted-foreground font-[fahkwang] mt-4 text-lg">
             Want to consult with our team ?
           </p>
           <a

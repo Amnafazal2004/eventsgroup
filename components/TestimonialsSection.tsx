@@ -5,7 +5,7 @@ import { Play, Star } from 'lucide-react';
 import { guttie } from "@/lib/fonts";
 
 
-const headingText = "Success Stories";
+const headingText = "SUCCESS STORIES";
 const headingWords = headingText.split(" ");
 
 interface Testimonial {
@@ -127,9 +127,9 @@ const TestimonialsCarousel = () => {
           {/* Left - Heading */}
           <div>
             <span
-              className={`inline-block text-sm font-display text-orange-500 mb-2 transition-all duration-500 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}
+              className={`inline-block font-[fahkwang] text-sm font-display text-orange-500 mb-2 transition-all duration-500 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}
             >
-              // Testimonials
+               Testimonials
             </span>
             
             <motion.h2
@@ -157,12 +157,12 @@ const TestimonialsCarousel = () => {
             </motion.h2>
 
             <p
-              className={`text-muted-foreground mt-6 text-lg leading-relaxed max-w-lg transition-all duration-500 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}
+              className={`text-muted-foreground font-[fahkwang] mt-6 text-lg leading-relaxed max-w-lg transition-all duration-500 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}
               style={{ animationDelay: '0.2s' }}
             >
               Read our clients' inspiring testimonials and see how their success
               reflects our creative vision.{' '}
-              <span className="text-foreground italic">
+              <span className="text-foreground font-[fahkwang] italic">
                 "Each story celebrates our commitment to innovative design and
                 exceptional service."
               </span>
@@ -189,7 +189,7 @@ const TestimonialsCarousel = () => {
                   4.9 <span className="text-muted-foreground text-lg">/ 5</span>
                 </span>
               </div>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground font-[fahkwang]">
                 We've delivered{' '}
                 <span className="text-foreground font-bold">150+</span>{' '}
                 projects that help companies generate real results.
