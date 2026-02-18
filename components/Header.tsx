@@ -16,7 +16,7 @@ const Header = () => {
           <div className="w-30 h-30 relative transition-transform duration-300 group-hover:scale-110">
   <Image
     src={logo}
-    alt="DreamsLab Logo"
+    alt="Events First Group"
     fill
     className="object-contain"
     priority
