@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import blog3 from "@/assets/blog-3.webp";
+import missionSectionImage from "@/assets/mission1.png";
 import { guttie } from "@/lib/fonts";
 
 const text =
@@ -51,7 +51,7 @@ const OurMissionSection = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <Image
-            src={blog3}
+            src={missionSectionImage}
             alt="Mission Image"
             fill
             className="object-cover"

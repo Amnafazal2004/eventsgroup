@@ -1,6 +1,6 @@
 
-import project1 from "@/assets/project-1.webp";
-import project2 from "@/assets/project-2.webp";
+import eventimage2 from "@/assets/eventimage2.png";
+import eventimage1 from "@/assets/eventimage1.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { guttie } from "@/lib/fonts";
@@ -57,12 +57,12 @@ const AboutSection = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
             <Image
-              src={project1}
+              src={eventimage1}
               alt="About Image 1"
               className="w-1/2 h-60 object-cover rounded-lg"
             />
             <Image
-              src={project2}
+              src={eventimage2}
               alt="About Image 2"
               className="w-1/2 h-60 object-cover rounded-lg"
             />

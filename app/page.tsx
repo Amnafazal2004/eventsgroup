@@ -51,7 +51,7 @@ const Index = () => {
 
           
         </div>
-            <main className="pt-150">
+            <main className="">
       <HeroSection />
       <AboutSection />
       <OurMissionSection/>
