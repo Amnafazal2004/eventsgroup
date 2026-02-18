@@ -7,7 +7,7 @@ const ProcessSection = () => {
 
   return (
     <section className="" ref={ref}>
-      <div className="container mx-auto px-6 lg:px-12">
+      <div className="container mx-auto px-6 lg:px-12 mb-10">
         {/* CTA */}
         <div
           className={`mt-20 glass-card border-gray-300 rounded-2xl p-8 lg:p-12 text-center hover-lift transition-all duration-700 ${isVisible ? "animate-scale-up" : "opacity-0"}`}
