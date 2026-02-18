@@ -1,3 +1,4 @@
+"use client"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const clientLogos = [

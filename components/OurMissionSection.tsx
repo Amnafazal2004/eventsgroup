@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import missionSectionImage from "@/assets/mission1.png";
+import missionSectionImage from "@/assets/eventimage5.png";
 import { guttie } from "@/lib/fonts";
 
 const text =
@@ -12,7 +12,7 @@ const OurMissionSection = () => {
   const words = text.split(" ");
 
   return (
-    <section className="w-full pt-10 bg-black overflow-hidden">
+    <section className="w-full pt-10 overflow-hidden">
       
       {/* Animated Heading Section */}
       <div className="py-20 px-6 flex items-center justify-center text-center">

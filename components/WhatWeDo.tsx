@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import whatwedoSection from "@/assets/whatwedoSection.png";
-import whatwedoSection2 from "@/assets/whatwedoSection2.png";
+import whatwedoSection from "@/assets/eventimage3.png";
+import whatwedoSection2 from "@/assets/eventimage4.png";
 import { guttie } from "@/lib/fonts";
 import {
   Accordion,
@@ -14,7 +14,7 @@ import {
 
 const ServicesSection = () => {
   return (
-    <section className="w-full bg-black text-white py-12 md:py-16 lg:py-20">
+    <section className="w-full text-white py-12 md:py-10 lg:py-2">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
 
         {/* Heading */}
