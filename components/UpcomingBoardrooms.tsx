@@ -46,9 +46,31 @@ const boardroomsData: Boardroom[] = [
       "Discuss global market expansion, partnerships, and cross-border leadership frameworks.",
     image: project3,
   },
+  {
+    id: 4,
+    title: "Global Expansion Forum",
+    date: "May 18, 2026",
+    location: "New York, USA",
+    description:
+      "Discuss global market expansion, partnerships, and cross-border leadership frameworks.",
+    image: project3,
+  },
+   {
+    id: 5,
+    title: "Global Expansion Forum",
+    date: "May 18, 2026",
+    location: "New York, USA",
+    description:
+      "Discuss global market expansion, partnerships, and cross-border leadership frameworks.",
+    image: project1,
+  },
 ];
 
-const UpcomingBoardrooms: React.FC = () => {
+interface UpcomingBoardroomsProps {
+  nextEventPage?: boolean;
+}
+
+const UpcomingBoardrooms: React.FC<UpcomingBoardroomsProps> = ({nextEventPage = false}) => {
   const [selectedRoom, setSelectedRoom] = useState<Boardroom | null>(null);
 
   return (
@@ -56,17 +78,17 @@ const UpcomingBoardrooms: React.FC = () => {
       {/* Header */}
       <div className="max-w-6xl mx-auto mb-16">
 
-          <motion.p
-        className="text-orange-500 font-[fahkwang] text-sm mb-2"
-          initial={{ opacity: 0, y: -40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.7 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-        >
-        BOARDROOMS
-        </motion.p>
+      {!nextEventPage ? <motion.p
+    className="text-orange-500 font-[fahkwang] text-sm mb-2"
+      initial={{ opacity: 0, y: -40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.7 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+    >
+    BOARDROOMS
+    </motion.p> : null}
       <motion.h2
-          className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-22 ${guttie.className}`}
+          className={nextEventPage ? `text-3xl md:text-4xl text-center lg:text-5xl font-bold mb-22 ${guttie.className}` :`text-3xl md:text-4xl lg:text-5xl font-bold mb-22 ${guttie.className}`}
           initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.9 }}

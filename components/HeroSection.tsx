@@ -20,7 +20,7 @@ const HeroSection = () => {
         />
       </div>
 
-      <div className="pt-8 bg-black">
+      <div className="pt-8">
          <div className="w-[1190px] mx-auto text-black rounded-xl bg-amber-600 pt-12">
         <div>
           <p className="flex justify-center flex-wrap text-9xl md:text-[280px] font-bold">

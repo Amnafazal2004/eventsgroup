@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Search, Menu, X, ArrowRight } from "lucide-react";
-import { motion, useScroll, useMotionValueEvent } from "motion/react"
+import { motion } from "motion/react"
 import Image from "next/image";
 import logo from "@/assets/logo.png";
 
@@ -14,6 +14,7 @@ const Header = () => {
         <div className="flex items-center gap-3">
           {/* Logo */}
           <div className="w-30 h-30 relative transition-transform duration-300 group-hover:scale-110">
+  <a href="/">
   <Image
     src={logo}
     alt="Events First Group"
@@ -21,6 +22,7 @@ const Header = () => {
     className="object-contain"
     priority
   />
+  </a>
 </div>
 
 
@@ -51,10 +53,10 @@ const Header = () => {
                 : "opacity-0 -translate-x-4 pointer-events-none"
             }`}
           >
-            {["Home", "About", "Services", "Projects", "Pricing", "Contact"].map((item, i) => (
+            {["Home", "AboutUs", "WhatWeDo", "Events", "ContactUs"].map((item, i) => (
               <motion.a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={`/${item.toLowerCase()}`}
                 whileHover={{
                   scale: 1.15,
                   y: -3,
@@ -108,10 +110,10 @@ const Header = () => {
         className={`md:hidden bg-black border-t border-border overflow-hidden transition-all duration-500 ease-out ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
       >
         <nav className="px-6 py-8 flex flex-col gap-4 md:gap-12 md:flex-row">
-          {["Home", "About", "Services", "Projects", "Pricing", "Contact"].map((item, i) => (
+          {["Home", "AboutUs", "WhatWeDo", "Events", "ContactUs"].map((item, i) => (
             <a
               key={item}
-              href={`#${item.toLowerCase()}`}
+              href={`/${item.toLowerCase()}`}
               onClick={() => setMenuOpen(false)}
               className="text-sm font-display hover:text-primary hover:translate-x-4 transition-all duration-300 link-underline"
               style={{ transitionDelay: menuOpen ? `${i * 70}ms` : "0ms" }}

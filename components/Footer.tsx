@@ -1,3 +1,4 @@
+"use client"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Footer = () => {
@@ -12,7 +13,7 @@ const Footer = () => {
             <div className="w-8 h-8 bg-primary rounded-sm flex items-center justify-center transition-transform duration-500 group-hover:rotate-180">
               <span className="text-primary-foreground font-display font-bold text-lg">✦</span>
             </div>
-            <span className="font-display font-bold transition-colors duration-300 group-hover:text-primary">DreamsLab</span>
+            <span className="font-display font-bold transition-colors duration-300 group-hover:text-primary">EventsFirstGroup</span>
           </div>
 
           {/* Links */}
@@ -38,7 +39,7 @@ const Footer = () => {
         </div>
 
         <div className={`mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground transition-all duration-700 ${isVisible ? "animate-fade-in" : "opacity-0"}`} style={{ animationDelay: "0.3s" }}>
-          © 2026 DreamsLab Digital Studio. All rights reserved.
+          © 2026 Events First Group. All rights reserved.
         </div>
       </div>
     </footer>
