@@ -18,6 +18,8 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import StatsSection from "@/components/StatsSection";
+import ContactUsPreview from "@/components/ContactUsPreview";
+import EventsHighlights from "@/components/EventsHighlights";
 
 const Index = () => {
    const { scrollY } = useScroll()
@@ -61,7 +63,9 @@ const Index = () => {
       <StatSection />
       {/* <StatsSection /> */}
       <ProcessSection />
+      <EventsHighlights/>
       <TestimonialsSection />
+      <ContactUsPreview/>
       <ContactSection />
       <Footer/>
     
