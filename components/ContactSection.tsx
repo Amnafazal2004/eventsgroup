@@ -90,6 +90,32 @@ const ContactSection = () => {
       setSubmitted(true);
     }
   };
+  const EASE = [0.22, 1, 0.36, 1] as const;
+
+  // ─── Reusable slide-up wrapper ────────────────────────────────────────────────
+  function SlideUp({
+    children,
+    delay = 0,
+    className,
+  }: {
+    children: React.ReactNode;
+    delay?: number;
+    className?: string;
+  }) {
+    const ref = useRef(null);
+    const inView = useInView(ref, { once: true, margin: "-80px" });
+    return (
+      <motion.div
+        ref={ref}
+        className={className}
+        initial={{ opacity: 0, y: 56 }}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 56 }}
+        transition={{ duration: 0.7, delay, ease: EASE }}
+      >
+        {children}
+      </motion.div>
+    );
+  }
 
   return (
     <>
@@ -105,40 +131,30 @@ const ContactSection = () => {
                 Water-flow animation: comes from bottom-left → upper-right.
                 Achieved with a combined x (negative = from left) and y (positive = from below).
             ────────────────────────────────────────────────────────────── */}
-            <motion.div
-              className="rounded-3xl p-8 sm:p-10 lg:p-12 space-y-5"
-              style={{ backgroundColor: "#efefed" }}
-              initial={{ opacity: 0, x: -70, y: 90 }}
-              animate={
-                isInView
-                  ? { opacity: 1, x: 0, y: 0 }
-                  : { opacity: 0, x: -70, y: 90 }
-              }
-              transition={{
-                duration: 1.1,
-                ease: [0.16, 1, 0.3, 1], // strong spring-like ease = "water surge"
-              }}
-            >
-              {/* Waving hand animation plays once on enter */}
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-black text-neutral-900">
-                Hey!{" "}
-                <motion.span
-                  className={`inline-block ${guttie.className}`}
-                  animate={
-                    isInView ? { rotate: [0, 16, -10, 16, -4, 12, 0] } : {}
-                  }
-                  transition={{ delay: 1.0, duration: 0.7 }}
-                >
-                  👋
-                </motion.span>
-              </h2>
+            <div className="flex flex-col gap-5">
+            <SlideUp delay={0.05}>
+              <span className="section-label inline-block">Drop Us a Line</span>
+            </SlideUp>
 
-              <p className="text-neutral-500 text-base sm:text-lg leading-relaxed max-w-sm">
-                We're here to bring your creative visions to life. If you'd
-                like to collaborate, inquire about our services, or simply say
-                hello, feel free to reach out!
+            <SlideUp delay={0.12}>
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl  font-black leading-[1.1] ${guttie.className}">
+                {/* We are always <span className="text-orange-500">ready</span> to
+                help you and answer your questions. */}
+                 Let’s Connect
+              </h3>
+            </SlideUp>
+
+           
+            <SlideUp delay={0.24}>
+              <p className="text-muted-foreground font-[fahkwang] text-base leading-relaxed">
+                {/* We're passionate about innovation, brilliant ideas and the
+                execution that brings it all together in one beautiful
+                experience. */}
+                Have a vision for your next event? We’re here to bring it to life.
+                Drop us a line with your questions, and let’s start building your next beautiful experience together.
               </p>
-            </motion.div>
+            </SlideUp>
+          </div>
 
             {/* ── Right: multi-step form ─────────────────────────────────── */}
             <motion.div
