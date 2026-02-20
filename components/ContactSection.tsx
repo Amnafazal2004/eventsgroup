@@ -5,7 +5,6 @@ import { useState, useRef, useCallback } from "react";
 import { ArrowRight } from "lucide-react";
 import { guttie } from "@/lib/fonts";
 
-// ─── Toast ────────────────────────────────────────────────────────────────────
 const Toast = ({ message, visible }: { message: string; visible: boolean }) => (
   <AnimatePresence>
     {visible && (
@@ -26,7 +25,6 @@ const Toast = ({ message, visible }: { message: string; visible: boolean }) => (
   </AnimatePresence>
 );
 
-// ─── Step definitions ─────────────────────────────────────────────────────────
 const STEPS = [
   {
     key: "name",
@@ -92,7 +90,7 @@ const ContactSection = () => {
   };
   const EASE = [0.22, 1, 0.36, 1] as const;
 
-  // ─── Reusable slide-up wrapper ────────────────────────────────────────────────
+  
   function SlideUp({
     children,
     delay = 0,
@@ -127,19 +125,14 @@ const ContactSection = () => {
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-20 items-center">
 
-            {/* ── Left card ─────────────────────────────────────────────
-                Water-flow animation: comes from bottom-left → upper-right.
-                Achieved with a combined x (negative = from left) and y (positive = from below).
-            ────────────────────────────────────────────────────────────── */}
+           
             <div className="flex flex-col gap-5">
             <SlideUp delay={0.05}>
               <span className="section-label inline-block">Drop Us a Line</span>
             </SlideUp>
 
             <SlideUp delay={0.12}>
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl  font-black leading-[1.1] ${guttie.className}">
-                {/* We are always <span className="text-orange-500">ready</span> to
-                help you and answer your questions. */}
+              <h3 className={`text-3xl sm:text-4xl lg:text-5xl  font-black leading-[1.1] ${guttie.className}`}>
                  Let’s Connect
               </h3>
             </SlideUp>
@@ -147,16 +140,13 @@ const ContactSection = () => {
            
             <SlideUp delay={0.24}>
               <p className="text-muted-foreground font-[fahkwang] text-base leading-relaxed">
-                {/* We're passionate about innovation, brilliant ideas and the
-                execution that brings it all together in one beautiful
-                experience. */}
                 Have a vision for your next event? We’re here to bring it to life.
                 Drop us a line with your questions, and let’s start building your next beautiful experience together.
               </p>
             </SlideUp>
           </div>
 
-            {/* ── Right: multi-step form ─────────────────────────────────── */}
+          
             <motion.div
               className="space-y-8"
               initial={{ opacity: 0, y: 40 }}
@@ -181,7 +171,7 @@ const ContactSection = () => {
                 </motion.div>
               ) : (
                 <>
-                  {/* ── Animated field ── */}
+                  
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={currentStep.key}
@@ -200,7 +190,6 @@ const ContactSection = () => {
                       {currentStep.type === "textarea" ? (
                         <textarea
                           rows={4}
-                          autoFocus
                           value={formData[currentStep.key]}
                           onChange={(e) =>
                             setFormData((d) => ({
@@ -216,7 +205,6 @@ const ContactSection = () => {
                         />
                       ) : (
                         <input
-                          autoFocus
                           type={currentStep.type}
                           value={formData[currentStep.key]}
                           onChange={(e) =>
@@ -235,11 +223,7 @@ const ContactSection = () => {
                     </motion.div>
                   </AnimatePresence>
 
-                  {/* ── Dots + Arrow ──
-                      Layout: dots on the left, large white circle arrow on the right.
-                      Exactly matches the screenshot — dots are small filled circles,
-                      arrow button is a big white circle with a right-arrow icon.
-                  ── */}
+                
                   <div className="flex items-center">
                     {/* Pagination dots */}
                     <div className="flex items-center gap-3">
@@ -260,7 +244,7 @@ const ContactSection = () => {
                       ))}
                     </div>
 
-                    {/* Large white circle arrow button — pushed to the right */}
+                
                     <motion.button
                       type="button"
                       onClick={handleNext}

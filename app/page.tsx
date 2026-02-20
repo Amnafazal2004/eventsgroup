@@ -11,11 +11,7 @@ import ClientSection from "@/components/ClientSection";
 import UpcomingBoardrooms from "@/components/UpcomingBoardrooms";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
-import StatsSection from "@/components/StatsSection";
-import ContactUsPreview from "@/components/ContactUsPreview";
 import EventsHighlights from "@/components/EventsHighlights";
-import ContactHero from "@/components/ContactHero";
 
 
 const Index = () => {
