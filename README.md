@@ -13,8 +13,8 @@ Event Groups is a frontend web application that allows users to explore  events,
 - Event listings with basic interaction
 
 ### Tech Stack
-- HTML, CSS, JavaScript
-- (Optional: React / Next.js if you used it)
+- HTML, CSS, JavaScript, Tailwind CSS 
+- React, Next.js 
 
 ### Project Type
 This is a frontend-only project with no backend integration.
